@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Tutorial 5</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/Fabricas/fabricas.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body >
+	<div class="container">
+		<h1>Compartir datos entre controladores utilizando Fábricas</h1>
+		<hr>
+		<span class="lead text-info">Controlador Uno</span>
+		<div ng-controller="ControladorUno">
+			<input type="text" size="50" ng-model="dato.mensaje">
+			<h3 class="text-info">{{dato.mensaje}}</h3>
+		</div>
+
+		<hr>
+
+		<span class="lead text-warning">Controlador Dos</span>
+		<div ng-controller="ControladorDos">
+			<input type="text" size="50" ng-model="dato.mensaje">
+			<h3 class="text-warning">{{dato.mensaje}}</h3>
+		</div>
+	</div>
+</body>
+</html>
