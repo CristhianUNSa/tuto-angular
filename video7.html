@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Tutorial 7</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/Formularios/formularios.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body >
+	<div class="container">
+		<h1>Formularios con AngularJS</h1>
+		<hr>
+		<form role="form" name="formu">
+			<div class="form-group" ng-class="{'has-error': formu.nombreU.$invalid && formu.nombreU.$dirty, 'has-success': formu.nombreU.$valid && formu.nombreU.$dirty}">
+		      <label for="inputNombre">Nombre</label>
+		      <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" name="nombreU" ng-model="usuario.nombre" required>
+		    </div>
+		    <div class="form-group" ng-class="{'has-error': formu.emailU.$invalid && formu.emailU.$dirty, 'has-success': formu.emailU.$valid && formu.emailU.$dirty}">
+		      <label for="inputEmail">Email</label>
+		      <input id="inputEmail" type="email" class="form-control" placeholder="email" name="emailU" ng-model="usuario.email" required>
+		      <div ng-show="formu.emailU.$dirty && formu.emailU.$invalid">
+		        <p class="help-block text-danger" ng-show="formu.emailU.$error.required">Campo obligatorio</p>
+		        <p class="help-block text-danger" ng-show="formu.emailU.$error.email">Email invalido</p>
+		      </div>
+		    </div>
+		    <div class="checkbox">
+		      <label>
+		        <input type="checkbox" name="aceptoU" ng-model="usuario.acepto" required> Acepto.
+		      </label>
+		    </div>
+		    <button class="btn btn-success" ng-disabled="formu.$invalid">Registrar</button>
+		</form>
+	</div>
+</body>
+</html>
