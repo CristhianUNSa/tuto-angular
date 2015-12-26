@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="todoAp">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Tutorial 3</title>
@@ -10,7 +10,7 @@
 </head>
 <body >
 	<h2>Lista de Tareas</h2>
-	<div ng-controller="ControladorTareas">
+	<div ng-app="todoAp" ng-controller="ControladorTareas">
 		<span>{{restantes()}} de {{tareas.length}}</span>
 		[<a href="#" class="text-danger" ng-click="eliminar()">Eliminar tareas hechas</a>]
 		<ul class="unstyled">
@@ -18,11 +18,11 @@
 				<input type="checkbox" ng-model="tarea.hecho">
 				<span class="hecho-{{tarea.hecho}}">{{tarea.texto}}</span>
 			</li>
-			<form ng-submit="agregarTarea()">
-				<input type="text" placeholder="Agregar nueva tarea" ng-model="textoNuevaTarea">
-				<button class="btn btn-primary" type="submit">Agregar</button>
-			</form>
 		</ul>
+        <form ng-submit="agregarTarea()">
+            <input type="text" placeholder="Agregar nueva tarea" ng-model="textoNuevaTarea">
+            <button class="btn btn-primary" type="submit">Agregar</button>
+        </form>
 	</div>
 </body>
 </html>
